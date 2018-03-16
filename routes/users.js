@@ -1,7 +1,45 @@
 const
-    express= require('express'),
-    usersRouter = new express.Router()
-    
-userRouter.get("/", (req, res)=>{
-    res.send("Users Index")
+  express = require('express'),
+  usersRouter = new express.Router(),
+  passport = require('passport')
+
+usersRouter.get('/login', (req, res) => {
+  res.render('login', {message: req.flash('loginMessage')})
 })
+
+usersRouter.post('/login', passport.authenticate('local-login', {
+  successRedirect: '/users/profile',
+  failureRedirect: '/users/login'
+}))
+
+usersRouter.get('/signup', (req, res) => {
+  res.render('signup', {message: req.flash('signupMessage')})
+})
+
+usersRouter.post('/signup', passport.authenticate('local-signup', {
+  successRedirect: '/users/profile', 
+  failureRedirect: '/users/signup'
+}))
+
+usersRouter.get('/profile', isLoggedIn ,(req, res)=>{
+  res.render('profile', { user: req.user }) //current user
+})
+
+usersRouter.get('/logout', (req, res)=>{
+  req.logout()
+  res.redirect('/')
+})
+
+usersRouter.get('/auth/github/', passport.authenticate('github'))
+
+usersRouter.get('/auth/github/callback', passport.authenticate('github'),(req, res)=>{
+  res.render('profile', { user: req.user }) 
+})
+
+function isLoggedIn(req, res, next){
+  if(req.isAuthenticated()) return next()
+  res.redirect('/users/login')
+
+}
+
+module.exports = usersRouter

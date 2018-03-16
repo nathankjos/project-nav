@@ -1,21 +1,70 @@
 const
-    express = require('express')
-    app = express()
-    logger = require('morgan')
-    bodyParser = require('body-parser')
-    ejsLayouts = require('express-ejs-layouts')
-    axios = require('axios')
-    dotenv = require('dotenv')
-    mongoose = require('mongoose')
-    PORT = 3000
+    express = require('express'),
+    app = express(),
+    ejs = require('ejs'),
+    logger = require('morgan'),
+    bodyParser = require('body-parser'),
+    ejsLayouts = require('express-ejs-layouts'),
+    axios = require('axios'),
+    // dotenv = require('dotenv').config(),
+    mongoose = require('mongoose'),
+    cookieParser = require('cookie-parser'),
+    session = require('express-session'),
+    MongoDBStore = require('connect-mongodb-session')(session),
+    passport = require('passport'),
+    flash = require('connect-flash'),
+    passportConfig = require('./config/passport.js'),
+	usersRouter = require('./routes/users.js')
 
-app.set('views', `${__dirname}/views`)
-app.set('view engine', 'ejs')
 
-mongoose.connect('mongodb://localhost/Project-Navigator', (err) => {
-    console.log(err||"Connected to MongoDB")
+// environment port
+const
+	port = process.env.PORT || 3000,
+	mongoConnectionString = process.env.MONGODB_URL || 'mongodb://localhost/Project-Nav'
+
+// mongoose connection
+mongoose.connect(mongoConnectionString, (err) => {
+	console.log(err || "Connected to MongoDB (Project-Nav)")
 })
 
-app.listen(PORT, (err) => {
-    console.log(err || `Server running on ${PORT}`)
+// will store session information as a 'sessions' collection in Mongo
+const store = new MongoDBStore({
+    uri: mongoConnectionString,
+    collection: 'sessions'
+  });
+
+// middleware
+app.use(logger('dev'))
+app.use(cookieParser())
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
+app.use(flash())
+
+    
+app.set('views', `${__dirname}/views`)
+app.set('view engine', 'ejs')
+app.use(ejsLayouts)
+
+app.use(session({
+	secret: "booooooom",
+	cookie: { maxAge: 60000000 },
+	resave: true,
+	savedUninitialized: false,
+	store: store
+
+}))
+
+app.use(passport.initialize())
+app.use(passport.session())
+require('dotenv').load()
+
+//root route
+app.get('/', (req,res) => {
+	res.render('index')
+})
+
+app.use('/users', usersRouter)
+
+app.listen(port, (err) => {
+	console.log(err || "Server running on port " + port)
 })
