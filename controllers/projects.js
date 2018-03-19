@@ -16,6 +16,9 @@ module.exports = {
             res.redirect('/projects')
         })
     },
+    new: (req, res)=>{
+        res.render('projects/new')
+    },
     update: (req, res) => {
         Project.findByIdAndUpdate(req.params.id, req.body, (err, updatedProject) => {
             res.redirect(`/projects/${req.params.id}`)

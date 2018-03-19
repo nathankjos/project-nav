@@ -6,7 +6,7 @@ const
 projectsRouter.get('/', projectsCtrl.index)
 projectsRouter.post('/', projectsCtrl.create)
 
-//projectsRouter.get('/new', projectsCtrl.new)
+projectsRouter.get('/new', projectsCtrl.new)
 projectsRouter.get('/:id/edit', projectsCtrl.edit)
 
 projectsRouter.get('/:id', projectsCtrl.show)
