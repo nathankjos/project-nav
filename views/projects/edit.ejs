@@ -1,4 +1,4 @@
-<h1>Edit </h1>
+<h1>Edit Project</h1>
 
 <form method="POST" action="/projects/<%= project._id %>?_method=PATCH">
     <input value="<%= project.name %>" name="name" type="text" placeholder="Name of Project" />
@@ -6,6 +6,6 @@
     <input value="<%= project.description %>" name="description" type="text" placeholder="Description" />
     <input value="<%= project.imageUrl %>" name="imageUrl" type="text" placeholder="Image URL" />
    
-    <button>Edit Project Submit</button>
+    <button>Submit Project Revisions</button>
    
-    </form>
+</form>
