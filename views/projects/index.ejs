@@ -1,10 +1,24 @@
 Projects: <h1><%= projects.length %></h1>
 
-<ul>
+
+
+
 <% projects.forEach((p)=>{ %>
-    <li>
-       <a href="/projects/<%= p._id %>"><%= p.name %></a>
-    </li>
+
+    <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src= <%= p.imageUrl %> alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title"><%= p.name %></h5>
+                <p class="card-text"><%= p.description %></p>
+                <a href="/projects/<%= p._id%>" class="btn btn-primary">View Project</a>
+            </div>
+        </div>
+  
 
 <% }) %>
 </ul>
+
+
+
+
+
