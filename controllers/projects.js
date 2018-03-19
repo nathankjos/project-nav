@@ -3,12 +3,14 @@ const Project = require('../models/Project.js')
 module.exports = {
     index: (req, res) => {
         Project.find({}, (err, allDemProjects) => {
-            res.json(allDemProjects)
+            res.render('projects/index',{projects: allDemProjects})
         })
     },
     show: (req, res) => {
         Project.findById(req.params.id).populate('user').exec((err, thatProject) => {
-            res.json(thatProject)
+
+            res.render('projects/show', {project: thatProject})
+
         })
     },
     create: (req, res) => {
