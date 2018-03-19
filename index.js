@@ -14,6 +14,7 @@ const
     passport = require('passport'),
     flash = require('connect-flash'),
     passportConfig = require('./config/passport.js'),
+    projectsRouter = require('./routes/projects.js'),
 	usersRouter = require('./routes/users.js')
 
 
@@ -63,6 +64,7 @@ app.get('/', (req,res) => {
 	res.render('index')
 })
 
+app.use('/projects', projectsRouter)
 app.use('/users', usersRouter)
 
 app.listen(port, (err) => {
