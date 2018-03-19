@@ -3,3 +3,8 @@
 <div>Project Description: <%= project.description %> </div>
 <img class="project-image" src= <%= project.imageUrl %>/>
 <div><a href="<%= project.url %>">Find on Github</a></div>
+
+<button type="button" class="btn btn-warning"> <a href='/projects/<%= project._id %>/edit'>Edit Project</a></button>
+<form method="POST" action="/projects/<%= project._id %>?_method=DELETE">
+    <button class="btn btn-danger">Delete</button>
+</form>
