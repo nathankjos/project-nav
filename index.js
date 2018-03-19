@@ -12,12 +12,16 @@ const
     cookieParser = require('cookie-parser'),
     session = require('express-session'),
     MongoDBStore = require('connect-mongodb-session')(session),
+    nss = require('node-suggestive-search').init({
+        dataBase: "mongodb", 
+        mongoDatabase: "mongodb://127.0.0.1:27017/nodeSugestiveSearch",
+        cache: true
+        }),
     passport = require('passport'),
     flash = require('connect-flash'),
     passportConfig = require('./config/passport.js'),
     projectsRouter = require('./routes/projects.js'),
 	usersRouter = require('./routes/users.js')
-
 
 // environment port
 const

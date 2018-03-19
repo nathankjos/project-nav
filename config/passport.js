@@ -4,6 +4,7 @@ const
     User = require('../models/User.js')
     GitHubStrategy = require('passport-github2').Strategy,
     require('dotenv').load()
+    
 
 passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
