@@ -1,12 +1,13 @@
 const
     express = require('express'),
+    path = require('path'),
     app = express(),
     ejs = require('ejs'),
     logger = require('morgan'),
     bodyParser = require('body-parser'),
     ejsLayouts = require('express-ejs-layouts'),
     axios = require('axios'),
-    // dotenv = require('dotenv').config(),
+    dotenv = require('dotenv').config(),
     mongoose = require('mongoose'),
     cookieParser = require('cookie-parser'),
     session = require('express-session'),
@@ -40,8 +41,7 @@ app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use(flash())
-app.use(express.static(`${__dirname}/public)`)) //suppose to link to css
-
+app.use(express.static(path.join(__dirname, 'public')))
 
     
 app.set('views', `${__dirname}/views`)
