@@ -1,6 +1,6 @@
 const
     express = require('express'),
-    path = require('path')
+    path = require('path'),
     app = express(),
     ejs = require('ejs'),
     logger = require('morgan'),
@@ -41,8 +41,7 @@ app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use(flash())
-app.use(express.static(path.join(__dirname, 'public'))) //suppose to link to css
-
+app.use(express.static(path.join(__dirname, 'public')))
 
     
 app.set('views', `${__dirname}/views`)
