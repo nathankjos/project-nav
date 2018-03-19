@@ -7,10 +7,10 @@ module.exports = {
         })
     },
     show: (req, res) => {
-        Project.findById(req.params.id.populate('user').exec((err, thatProject) => {
+        Project.findById(req.params.id).populate('user').exec((err, thatProject) => {
             res.json(thatProject)
         })
-    )},
+    },
     create: (req, res) => {
         Project.create(req.body, (err, brandNewProject) => {
             res.redirect('/projects')
