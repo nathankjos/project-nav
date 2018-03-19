@@ -30,11 +30,15 @@ usersRouter.get('/logout', (req, res)=>{
   res.redirect('/')
 })
 
+
+
 usersRouter.get('/auth/github/', passport.authenticate('github'))
 
 usersRouter.get('/auth/github/callback', passport.authenticate('github'),(req, res)=>{
   res.render('profile', { user: req.user }) 
 })
+
+
 
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()) return next()

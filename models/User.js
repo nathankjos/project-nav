@@ -6,7 +6,8 @@ const
     name: String,
     email: String,
     password: String,
-    username: String
+    username: String,
+    picture: String
   })
 
 userSchema.methods.generateHash = function(password) {
