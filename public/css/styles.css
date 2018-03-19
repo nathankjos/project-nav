@@ -6,6 +6,10 @@ li {
     display: inline;
 }
 
-img {
+.profile-pic {
     max-width: 100px;
+}
+
+.project-image{
+    max-width: 400px;
 }
