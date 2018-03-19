@@ -1,7 +1,4 @@
-Projects: <h1><%= projects.length %></h1>
-
-
-
+Projects: <h1><%= projects.length %><span id="newProject"><a href="/projects/new">New Project</a></span></h1>
 
 <% projects.forEach((p)=>{ %>
 
@@ -13,12 +10,5 @@ Projects: <h1><%= projects.length %></h1>
                 <a href="/projects/<%= p._id%>" class="btn btn-primary">View Project</a>
             </div>
         </div>
-  
-
 <% }) %>
 </ul>
-
-
-
-
-
