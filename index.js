@@ -4,6 +4,7 @@ const
     app = express(),
     ejs = require('ejs'),
     logger = require('morgan'),
+    methodOverride = require('method-override')
     bodyParser = require('body-parser'),
     ejsLayouts = require('express-ejs-layouts'),
     axios = require('axios'),
@@ -37,6 +38,7 @@ const store = new MongoDBStore({
 
 // middleware
 app.use(logger('dev'))
+app.use(methodOverride('_method'))
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
