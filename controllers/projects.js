@@ -8,7 +8,9 @@ module.exports = {
     },
     show: (req, res) => {
         Project.findById(req.params.id).populate('user').exec((err, thatProject) => {
+
             res.render('projects/show', {project: thatProject})
+
         })
     },
     create: (req, res) => {
