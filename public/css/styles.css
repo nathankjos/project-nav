@@ -13,6 +13,7 @@ li {
 .project-image{
     max-width: 400px;
 }
-.img_top {
-    /* width: 250px; */
+.card{
+    display: inline-block;
+    margin: 0 auto;
 }
