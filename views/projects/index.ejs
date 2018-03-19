@@ -1,0 +1,10 @@
+Projects: <h1><%= projects.length %></h1>
+
+<ul>
+<% projects.forEach((p)=>{ %>
+    <li>
+       <a href="/projects/<%= p._id %>"><%= p.name %></a>
+    </li>
+
+<% }) %>
+</ul>
