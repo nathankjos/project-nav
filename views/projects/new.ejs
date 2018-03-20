@@ -2,9 +2,16 @@
 
 <form method="post" action="/projects">
     <input name="name" type="text" placeholder="Name" />
-    <input name="url" type="text" placeholder="URL" />
+    <input name="githubUrl" type="text" placeholder="Github Link" />
     <input name ="description" type="text" placeholder="description" />
     <input name ="imageUrl" type="text" placeholder="Image URL" />
+    <input name="projectUrl" type="text" placeholder="Project Link" />
+    <div class="form-group">
+        <label for="exampleFormControlSelect1"> Current Project? </label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option> True </option>
+          <option> False </option>
+        </select>
     <button>Submit</button>
 </form>
 
