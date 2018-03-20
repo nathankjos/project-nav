@@ -13,15 +13,13 @@ li {
 .project-image{
     max-width: 400px;
 }
-
-.form-group {
-    max-width: 150px;
-
 .card{
     display: inline-block;
     margin: 0 auto;
-
 }
+.form-group {
+    max-width: 150px;
+ }
 #newProject {
     float: right;
     font-size: 20px;
