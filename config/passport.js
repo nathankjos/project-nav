@@ -10,19 +10,18 @@ passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
     callbackURL: process.env.GITHUB_CALLBACK
-},
-function(accessToken, refreshToken, profile, cb){
-User.findOrCreate({username: profile.username}, {username: profile.username}, (err, user) => {
-// console.log(user)
-// console.log(profile)
-user.name = profile.username
-user.picture = profile.photos[0].value
-console.log(user)
-user.save((err, newUser) =>{
-    return cb (err, user)   
-})
+}, function(accessToken, refreshToken, profile, cb){
+    User.findOrCreate({username: profile.username}, {username: profile.username}, (err, user) => {
+        // console.log(user)
+        // console.log(profile)
+        user.name = profile.username
+        user.picture = profile.photos[0].value
+        console.log(user)
+        user.save((err, newUser) =>{
+            return cb (err, user)   
+        })
 
-})
+    })
 //    console.log(profile)
 }))
 
