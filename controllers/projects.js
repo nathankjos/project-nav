@@ -13,8 +13,10 @@ module.exports = {
 
         })
     },
-    create: (req, res) => {
-        Project.create(req.body, (err, brandNewProject) => {
+    post: (req, res) => {
+        var newProject = new Project(req.body)
+        newProject.user = req.user._id
+        newProject.save((err, brandNewProject) => {
             res.redirect('/projects')
         })
     },
