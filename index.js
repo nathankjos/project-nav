@@ -49,28 +49,30 @@ app.use(bodyParser.json())
 app.use(flash())
 app.use(express.static(path.join(__dirname, 'public')))
 
-    
+
 app.set('views', `${__dirname}/views`)
 app.set('view engine', 'ejs')
 app.use(ejsLayouts)
 
 app.use(session({
-	secret: "booooooom",
+    secret: "booooooom",
 	cookie: { maxAge: 60000000 },
 	resave: true,
 	savedUninitialized: false,
 	store: store
-
+    
 }))
 
 app.use(passport.initialize())
 app.use(passport.session())
 require('dotenv').load()
 
-app.use((req, res, next)=>{
-    app.locals.currentUser = req.user  //makes current user accessible in all routes
-    app.locals.loggedIn = !!req.user   //is current user logged in, boolean 'loggedIn'
-    next()
+
+app.use((req,res,next) => {
+    app.locals.currentUser = req.user;
+    app.locals.isLoggedIn = !!req.user
+    next();
+
 })
 
 //root route

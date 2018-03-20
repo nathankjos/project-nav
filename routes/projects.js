@@ -10,7 +10,10 @@ projectsRouter.get('/new', projectsCtrl.new)
 projectsRouter.get('/:id/edit', projectsCtrl.edit)
 
 projectsRouter.get('/:id', projectsCtrl.show)
+
 projectsRouter.patch('/:id', projectsCtrl.update)
 projectsRouter.delete('/:id', projectsCtrl.destroy)
+
+
 
 module.exports = projectsRouter

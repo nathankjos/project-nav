@@ -41,9 +41,10 @@ usersRouter.get('/auth/github/callback', passport.authenticate('github'),(req, r
 
 
 function isLoggedIn(req, res, next){
-  if(req.isAuthenticated()) return next()
-  res.redirect('/users/login')
-
+  if(req.isAuthenticated()) return next();
+  res.redirect('/users/login');
 }
+
+
 
 module.exports = usersRouter
