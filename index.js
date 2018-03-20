@@ -67,13 +67,16 @@ app.use(passport.initialize())
 app.use(passport.session())
 require('dotenv').load()
 
+
 app.use((req,res,next) => {
     app.locals.currentUser = req.user;
     app.locals.isLoggedIn = !!req.user
     next();
 })
+
 //root route
 app.get('/', (req,res) => {
+    console.log(req.user)               //view who current user is
 	res.render('index')
 })
 
