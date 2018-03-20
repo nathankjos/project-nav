@@ -1,16 +1,28 @@
 <h1>Add New Project</h1>
 
-<%= isLoggedIn %>
-
 <form method="post" action="/projects">
-    <input name="name" type="text" placeholder="Name" />
-    <input name="githubUrl" type="text" placeholder="Github Link" />
-    <input name ="description" type="text" placeholder="description" />
-    <input name ="imageUrl" type="text" placeholder="Image URL" />
-    <input name="projectUrl" type="text" placeholder="Project Link" />
     <div class="form-group">
-        <label for="exampleFormControlSelect1"> Current Project? </label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <label for="exampleInputEmail1">Name of Project</label>
+        <input name="name" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+         <label for="exampleInputEmail1">Add a Github URL</label>
+        <input name="githubUrl" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1"> Description of your project </label>
+        <input name ="description" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Host an Image to show off your Project </label>
+        <input name ="imageUrl" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+            <label for="exampleInputEmail1">Show your finished project off!</label>
+        <input name="projectUrl" type="text" class="form-control"  />
+    <div class="form-group">
+        <label for="exampleFormControlSelect1"> Current Project? (Project hides from other users if so) </label>
+        <select class="form-control" id="exampleFormControlSelect1" name="currentProject">
           <option> True </option>
           <option> False </option>
         </select>
