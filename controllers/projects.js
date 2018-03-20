@@ -1,10 +1,27 @@
 const Project = require('../models/Project.js')
 
-module.exports = {
+module.exports = 
+
+{
     index: (req, res) => {
+        if(req.query.search){
+       const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+
+    Project.find({name: regex}, (err, allDemProjects) => {
+        res.render('projects/index',{projects: allDemProjects})
+
+    })
+        } else {
         Project.find({}, (err, allDemProjects) => {
             res.render('projects/index',{projects: allDemProjects})
         })
+    }
+
+function escapeRegex(text){
+        return text.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&" );
+        
+    }
+
     },
     show: (req, res) => {
         Project.findById(req.params.id).populate('user').exec((err, thatProject) => {
@@ -37,5 +54,6 @@ module.exports = {
         Project.findByIdAndRemove(req.params.id, (err, deletedProject) => {
             res.redirect('/projects')
         })
-    }
+    },
+
 }

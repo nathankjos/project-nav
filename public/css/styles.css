@@ -6,6 +6,9 @@ li {
     display: inline;
 }
 
+.nav-li {
+    margin-left: 250px;
+}
 .profile-pic {
     max-width: 100px;
 }
