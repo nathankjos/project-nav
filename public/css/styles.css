@@ -13,9 +13,20 @@ li {
 .project-image{
     max-width: 400px;
 }
-/* .img_top { */
-    /* width: 250px; */
-/* } */
+
 .form-group {
     max-width: 150px;
+
+.card{
+    display: inline-block;
+    margin: 0 auto;
+
+}
+#newProject {
+    float: right;
+    font-size: 20px;
+    border: 1px solid rgba(113, 113, 255, 0.4);
+    background:rgba(113, 113, 255, 0.2);
+    border-radius: 5px;
+    padding: 4px;
 }
