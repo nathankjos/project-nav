@@ -4,7 +4,7 @@ const
     projectsCtrl = require('../controllers/projects.js')
 
 projectsRouter.get('/', projectsCtrl.index)
-projectsRouter.post('/', projectsCtrl.create)
+projectsRouter.post('/', projectsCtrl.post)
 
 projectsRouter.get('/new', projectsCtrl.new)
 projectsRouter.get('/:id/edit', projectsCtrl.edit)
