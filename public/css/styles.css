@@ -16,10 +16,32 @@ li {
 .card{
     display: inline-block;
     margin: 0 auto;
+    max-width: 200px;
+    min-width: 200px;
+    overflow: scroll;
+   
 }
+
+.card-img-top{
+    height: 140px;
+}
+
+.card-title {
+    height: 10px;
+}
+
+.card-text {
+    height: 40px;
+    white-space: pre-line;
+}
+.card-button{
+    height: 40px;
+}
+
 .form-group {
     max-width: 150px;
  }
+
 #newProject {
     float: right;
     font-size: 20px;

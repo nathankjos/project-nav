@@ -22,6 +22,8 @@ usersRouter.post('/signup', passport.authenticate('local-signup', {
 }))
 
 usersRouter.get('/profile', isLoggedIn ,(req, res)=>{
+  // if current user has a username field:
+  //send axios call to github with currentUsers name retrieve public repos
   res.render('profile', { user: req.user }) //current user
 })
 
