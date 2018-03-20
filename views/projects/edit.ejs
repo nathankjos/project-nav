@@ -1,19 +1,31 @@
-<h1>Edit Project</h1>
+<h1>Edit Project: <%= project.name %> </h1>
 
 <form method="POST" action="/projects/<%= project._id %>?_method=PATCH">
-    <input value="<%= project.name %>" name="name" type="text" placeholder="Name of Project" />
-    <input value="<%= project.githubUrl %>" name="githubUrl" type="text" placeholder="Link to GitHub Project" />
-    <input value="<%= project.description %>" name="description" type="text" placeholder="Description" />
-    <input value="<%= project.imageUrl %>" name="imageUrl" type="text" placeholder="Image URL" />
-
-    <input value="<%= project.projectUrl %>" name="projectUrl" type="text" placeholder="Link to GitHub Project" />
     <div class="form-group">
+        <label>Project Name</label>
+    <input class="form-control" value="<%= project.name %>" name="name" type="text" placeholder="Name of Project" />
+    </div>
+    <div class="form-group">
+        <label>Link to Github Repo</label>
+        <input class="form-control" value="<%= project.githubUrl %>" name="githubUrl" type="text" placeholder="Link to GitHub Project" />
+    </div>
+    <div class="form-group">
+            <label>Description of Project</label>
+    <input class="form-control" value="<%= project.description %>" name="description" type="text" placeholder="Description" />
+    </div>
+    <div class="form-group">
+        <label>Host an Image of your Project</label>
+        <input class="form-control" value="<%= project.imageUrl %>" name="imageUrl" type="text" placeholder="Image URL" />
+    </div>
+    <div class="form-group">
+        <label>Description of Project</label>
+        <input class="form-control" value="<%= project.projectUrl %>" name="projectUrl" type="text" placeholder="Link to GitHub Project" />
+    </div>
+        <div class="form-group">
         <label for="exampleFormControlSelect1"> Current Project? </label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <select class="form-control" id="exampleFormControlSelect1" name="currentProject">
           <option><%= project.currentProject %></option>
           <option><%= !project.currentProject %></option>
         </select>
-    <button>Edit Project</button>
-
-   
+    <button type= 'submit' class='btn btn-primary'>Edit Project</button>
 </form>

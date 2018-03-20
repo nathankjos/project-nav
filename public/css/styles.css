@@ -40,11 +40,6 @@ li {
 .card-button{
     height: 40px;
 }
-
-.form-group {
-    max-width: 150px;
- }
-
 #newProject {
     float: right;
     font-size: 20px;
