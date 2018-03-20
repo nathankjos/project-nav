@@ -34,7 +34,10 @@ usersRouter.get('/logout', (req, res)=>{
   res.redirect('/')
 })
 
-
+// link to chat
+usersRouter.get('/chat', (req, res)=>{
+  res.render('chat')
+})
 
 usersRouter.get('/auth/github/', passport.authenticate('github'))
 

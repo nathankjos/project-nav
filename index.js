@@ -81,6 +81,9 @@ app.get('/', (req,res) => {
 	res.render('index')
 })
 
+app.get('users/chat', (req,res)=>{
+    res.render('chat')
+})
 app.use('/projects', projectsRouter)
 app.use('/users', usersRouter)
 
