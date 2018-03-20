@@ -6,7 +6,7 @@ Noura Kaddoura ([NouraKaddoura](https://github.com/NouraKaddoura))
 Nathan Kjos ([nathankjos](https://github.com/nathankjos))  
 Kristina Nette ([knette](https://github.com/knette))
 
-###Technology
+### Technology
 HTML  
 CSS  
 JavaScript  
