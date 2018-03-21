@@ -10,7 +10,7 @@
         </div>
     </div>
 </div>
-<% if(project[0].user.toString() == currentUser._id.toString()){ %>
+<% if(project[0] && project[0].user.toString() == currentUser._id.toString()){ %>
     <% project.forEach((p)=>{ %>
         <div class="card" style="width: 30%;">
                 <img class="card-img-top" src= <%= p.imageUrl %> alt="Card image cap">
