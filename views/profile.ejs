@@ -7,9 +7,18 @@
 <div class="row">
     <div class="col-sm-6 col-sm-offset-3" style="margin: 50px auto">
         <div class="well">
-            <p> Active Projects: 
-            </p>
-                
         </div>
     </div>
 </div>
+<% if(project[0].user.toString() == currentUser._id.toString()){ %>
+    <% project.forEach((p)=>{ %>
+        <div class="card" style="width: 30%;">
+                <img class="card-img-top" src= <%= p.imageUrl %> alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><%= p.name %></h5>
+                    <p class="card-text"><%= p.description %></p>
+                    <a href="/projects/<%= p._id%>" class="btn btn-primary card-button">View Project</a>
+                </div>
+            </div>
+    <% }) %>
+    <% } %>
