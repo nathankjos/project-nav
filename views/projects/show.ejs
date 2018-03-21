@@ -5,7 +5,7 @@
 
 <div><a href="<%= project.githubUrl %>">Find on Github</a></div>
 
-user: <%= project.user.name %> 
+user: <%= project.user.name %>
 
 <button type="button" class="btn btn-warning"> <a href='/projects/<%= project._id %>/edit'>Edit Project</a></button>
 <form method="POST" action="/projects/<%= project._id %>?_method=DELETE">
