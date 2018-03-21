@@ -1,8 +1,8 @@
 const
     passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
-    User = require('../models/User.js')
-    GitHubStrategy = require('passport-github2').Strategy,
+    User = require('../models/User.js'),
+    GitHubStrategy = require('passport-github2').Strategy;
     require('dotenv').load()
     
 

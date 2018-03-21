@@ -77,6 +77,14 @@ app.get('/', (req,res) => {
     console.log(req.user)               //view who current user is
 	res.render('index')
 })
+app.get('/:username/chat', (req,res) => {
+
+    console.log(app.locals.currentUser) 
+    console.log(app.locals.currentUser.username)
+    console.log(req.params.username)
+    res.render('chat')
+    
+})
 
 app.get('users/chat', (req,res)=>{
     res.render('chat')
