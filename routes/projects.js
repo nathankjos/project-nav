@@ -13,6 +13,7 @@ projectsRouter.get('/:id', projectsCtrl.show)
 projectsRouter.get('/:id/edit', isLoggedIn, projectsCtrl.edit)
 projectsRouter.patch('/:id', isLoggedIn, projectsCtrl.update)
 projectsRouter.delete('/:id', isLoggedIn, projectsCtrl.destroy)
+projectsRouter.post('/:id/comments', isLoggedIn, projectsCtrl.createComment)
 
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()) return next();

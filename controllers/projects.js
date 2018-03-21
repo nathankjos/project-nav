@@ -27,6 +27,7 @@ function escapeRegex(text){
     post: (req, res) => {
         var newProject = new Project(req.body)
         newProject.user = req.user._id
+        newProject.currentProject = Boolean(req.body.currentProject)
         newProject.save((err, brandNewProject) => {
             res.redirect('/projects')
         })
@@ -49,5 +50,17 @@ function escapeRegex(text){
             res.redirect('/projects')
         })
     },
+    createComment: (req, res) => {
+        console.log("here")
+        Project.findById(req.params.id, (err, thatProject) => {
+            console.log(req.user.name)
+            req.body.user = req.user.name
+            console.log("this is the body", req.body)
+            thatProject.comments.push(req.body)
+            thatProject.save((err, savedProject) => {
+                res.redirect(`/projects/${thatProject._id}`)
+            })
+        })
+    }
 
 }
