@@ -30,8 +30,6 @@ usersRouter.get('/profile', isLoggedIn ,(req, res)=>{
   Project.find({}, (err, projects) => {
     res.render('profile', { user: req.user, project: projects }) //current user
   })
-  
-  
 })
 
 usersRouter.get('/logout', (req, res)=>{
@@ -47,15 +45,15 @@ usersRouter.get('/chat', (req, res)=>{
 usersRouter.get('/auth/github/', passport.authenticate('github'))
 
 usersRouter.get('/auth/github/callback', passport.authenticate('github'),(req, res)=>{
-  res.render('profile', { user: req.user }) 
+  console.log("this one")
+  Project.find({}, (err, projects) => {
+    res.render('profile', { currentUser: req.user, user: req.user, project: projects }) //current user
+  })
 })
-
-
 
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()) return next();
   res.redirect('/users/login');
 }
-
 
 module.exports = usersRouter

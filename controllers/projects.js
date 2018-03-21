@@ -8,26 +8,20 @@ module.exports =
        const regex = new RegExp(escapeRegex(req.query.search), 'gi');
 
     Project.find({name: regex}, (err, allDemProjects) => {
-        res.render('projects/index',{projects: allDemProjects})
-
+        res.render('projects/index',{projects: allDemProjects, currentUser: req.user})
     })
         } else {
         Project.find({}, (err, allDemProjects) => {
             res.render('projects/index',{projects: allDemProjects})
         })
     }
-
 function escapeRegex(text){
         return text.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&" );
-        
     }
-
     },
     show: (req, res) => {
         Project.findById(req.params.id).populate('user').exec((err, thatProject) => {
-
             res.render('projects/show', {project: thatProject})
-
         })
     },
     post: (req, res) => {
