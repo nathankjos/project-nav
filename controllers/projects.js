@@ -1,7 +1,6 @@
 const Project = require('../models/Project.js')
 
 module.exports = 
-
 {
     index: (req, res) => {
         if(req.query.search){
@@ -12,6 +11,7 @@ module.exports =
     })
         } else {
         Project.find({}, (err, allDemProjects) => {
+            console.log("hello")
             res.render('projects/index',{projects: allDemProjects})
         })
     }
@@ -25,10 +25,19 @@ function escapeRegex(text){
         })
     },
     post: (req, res) => {
+        console.log("this is a post")
+        console.log(req.body)
+        // Project.create(req.body, (err, project) => {
+        //     console.log("this is hte new project", project)
+        //     res.redirect('/projects')
+        // })
         var newProject = new Project(req.body)
-        newProject.user = req.user._id
+
+        newProject.user = req.user.id
         newProject.currentProject = Boolean(req.body.currentProject)
         newProject.save((err, brandNewProject) => {
+            if(err) return console.log(err)
+            console.log(brandNewProject)
             res.redirect('/projects')
         })
     },
@@ -62,5 +71,4 @@ function escapeRegex(text){
             })
         })
     }
-
 }

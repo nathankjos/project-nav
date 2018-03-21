@@ -23,12 +23,13 @@ const
     flash = require('connect-flash'),
     passportConfig = require('./config/passport.js'),
     projectsRouter = require('./routes/projects.js'),
-	usersRouter = require('./routes/users.js')
+    usersRouter = require('./routes/users.js'),
+    Project = require('./models/Project.js')
 
 // environment port
 const
 	port = process.env.PORT || 3000,
-	mongoConnectionString = process.env.MONGODB_URL || 'mongodb://localhost/Project-Nav'
+	mongoConnectionString = process.env.MONGODB_URI || 'mongodb://localhost/Project-Nav'
 
 // mongoose connection
 mongoose.connect(mongoConnectionString, (err) => {
@@ -74,13 +75,12 @@ app.use((req,res,next) => {
 
 //root route
 app.get('/', (req,res) => {
-    console.log(req.user)               //view who current user is
-	res.render('index')
+    Project.find({}, (err, projects) => {
+        if(err) return console.log(err)
+        res.render('index', {projects: projects})
+    })  //view who current user is
 })
 
-app.get('users/chat', (req,res)=>{
-    res.render('chat')
-})
 app.use('/projects', projectsRouter)
 app.use('/users', usersRouter)
 
