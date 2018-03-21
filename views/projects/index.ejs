@@ -1,12 +1,11 @@
-Projects: <h1><%= projects.length %><span id="newProject"><a href="/projects/new">New Project</a></span></h1>
-<%= projects %>
+<span id="newProject"><a href="/projects/new">New Project</a></span></h1>
 <% projects.forEach((p)=>{ %>
 
     <div class="card" style="width: 30%;">
             <img class="card-img-top" src= <%= p.imageUrl %> alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title"><%= p.name %></h5>
-                <p class="card-text"><%= p.description %></p>
+                <p class="card-text"><%=  p.description.substring(45,0) %><% if(p.description.length > 45){ %>...<% } %></p>
                 <a href="/projects/<%= p._id%>" class="btn btn-primary card-button">View Project</a>
             </div>
         </div>

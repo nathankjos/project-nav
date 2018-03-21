@@ -1,12 +1,12 @@
 <h3>Project Name: <%= project.name %></h3>
 
 <div>Project Description: <%= project.description %> </div>
-<img class="project-image" src= <%= project.imageUrl %>/>
+<img class="project-image" src=<%= project.imageUrl %>/>
 
 <div><a href="<%= project.githubUrl %>">Find on Github</a></div>
 
 <% if(currentUser && project.user.id.toString() == currentUser.id.toString()){ %>
-<button type="button" class="btn btn-warning"> <a href='/projects/<%= project._id %>/edit'>Edit Project</a></button>
+<button type="button" class="btn btn-warning"> <a href='/projects/<%= project._id %>/edit'>Update Project</a></button>
 <form method="POST" onclick="return confirm('Are you sure you want to delete this project?')" action="/projects/<%= project._id %>?_method=DELETE">
     <button class="btn btn-danger">Delete</button>
 </form>
