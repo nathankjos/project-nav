@@ -23,7 +23,8 @@ const
     flash = require('connect-flash'),
     passportConfig = require('./config/passport.js'),
     projectsRouter = require('./routes/projects.js'),
-	usersRouter = require('./routes/users.js')
+    usersRouter = require('./routes/users.js'),
+    Project = require('./models/Project.js')
 
 // environment port
 const
@@ -74,9 +75,12 @@ app.use((req,res,next) => {
 
 //root route
 app.get('/', (req,res) => {
-    console.log(req.user)               //view who current user is
-	res.render('index')
+    Project.find({}, (err, projects) => {
+        if(err) return console.log(err)
+        res.render('index', {projects: projects})
+    })  //view who current user is
 })
+
 app.get('/:username/chat', (req,res) => {
 
     console.log(app.locals.currentUser) 

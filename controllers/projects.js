@@ -1,7 +1,6 @@
 const Project = require('../models/Project.js')
 
 module.exports = 
-
 {
     index: (req, res) => {
         if(req.query.search){
@@ -49,5 +48,4 @@ function escapeRegex(text){
             res.redirect('/projects')
         })
     },
-
 }
