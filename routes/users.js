@@ -47,7 +47,9 @@ usersRouter.get('/chat', (req, res)=>{
 usersRouter.get('/auth/github/', passport.authenticate('github'))
 
 usersRouter.get('/auth/github/callback', passport.authenticate('github'),(req, res)=>{
-  res.render('profile', { user: req.user }) 
+  Project.find({}, (err, projects) => {
+    res.render('profile', { user: req.user, project: projects }) //current user
+  })
 })
 
 
