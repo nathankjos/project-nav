@@ -26,7 +26,9 @@ usersRouter.get('/profile', isLoggedIn ,(req, res)=>{
   // axios.get(currentUser.public_repos)
   // if current user has a username field:
   //send axios call to github with currentUsers name retrieve public repos
+  res.render('projects', { projects: req.projects})
   res.render('profile', { user: req.user }) //current user
+  
 })
 
 usersRouter.get('/logout', (req, res)=>{
@@ -48,7 +50,6 @@ function isLoggedIn(req, res, next){
   if(req.isAuthenticated()) return next();
   res.redirect('/users/login');
 }
-
 
 
 module.exports = usersRouter

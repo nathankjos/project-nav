@@ -5,6 +5,9 @@ li {
     list-style: none;
     display: inline;
 }
+#profileH1 {
+    margin: 25px auto 0;
+}
 
 .nav-li {
     margin-left: 250px;
