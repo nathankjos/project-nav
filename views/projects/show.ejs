@@ -11,6 +11,14 @@
     <button class="btn btn-danger">Delete</button>
 </form>
 <% } else{ %>
-    <button type="button" class="btn btn-warning"> <a href='/projects/<%= project._id %>/comment'>Comment</a></button>
-    <button type="button" class="btn btn-warning"> <a href='/projects/<%= project._id %>/chat'>Chat with <%= project.user.name %> </a></button>  
+    <form method="post" action="/projects/<%=project.id %>/comments">
+            <label for="CommentLabel"> Comment: </label>
+            <input name ="body" type="text" class="form-control" />
+            <button class="btn btn-warning">Submit Comment</button> 
+    </form>    
 <% } %> 
+<ul>
+    <% project.comments.forEach((c) => { %>
+        <h1><%= c.user %> - <%= c.body %></h1>
+    <% }) %>
+</ul>

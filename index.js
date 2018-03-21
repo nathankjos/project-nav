@@ -81,18 +81,6 @@ app.get('/', (req,res) => {
     })  //view who current user is
 })
 
-app.get('/:username/chat', (req,res) => {
-
-    console.log(app.locals.currentUser) 
-    console.log(app.locals.currentUser.username)
-    console.log(req.params.username)
-    res.render('chat')
-    
-})
-
-app.get('users/chat', (req,res)=>{
-    res.render('chat')
-})
 app.use('/projects', projectsRouter)
 app.use('/users', usersRouter)
 
