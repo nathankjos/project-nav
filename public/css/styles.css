@@ -7,8 +7,6 @@ body{
     margin-bottom: 40%;
     font-family: 'Raleway', sans-serif;
 }
-
-
 li {
     list-style: none;
     display: inline;
@@ -16,14 +14,12 @@ li {
 #profileH1 {
     margin: 25px auto 0;
 }
-
 .nav-li {
     margin-left: 250px;
 }
 .profile-pic {
     max-width: 100px;
 }
-
 .project-image{
     max-width: 400px;
 }
@@ -34,17 +30,13 @@ li {
     min-width: 200px;
     overflow: scroll;
     color: black;
-   
 }
-
 .card-img-top{
     height: 140px;
 }
-
 .card-title {
     height: 10px;
 }
-
 .card-text {
     height: 40px;
     white-space: pre-line;

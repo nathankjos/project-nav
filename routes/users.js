@@ -1,7 +1,8 @@
 const
   express = require('express'),
   usersRouter = new express.Router(),
-  passport = require('passport')
+  passport = require('passport'),
+  Project = require('../models/Project.js')
 
 usersRouter.get('/login', (req, res) => {
   res.render('login', {message: req.flash('loginMessage')})
@@ -26,8 +27,10 @@ usersRouter.get('/profile', isLoggedIn ,(req, res)=>{
   // axios.get(currentUser.public_repos)
   // if current user has a username field:
   //send axios call to github with currentUsers name retrieve public repos
-  res.render('projects', { projects: req.projects})
-  res.render('profile', { user: req.user }) //current user
+  Project.find({}, (err, projects) => {
+    res.render('profile', { user: req.user, project: projects }) //current user
+  })
+  
   
 })
 
