@@ -1,3 +1,4 @@
+require('dotenv').load()
 const
     express = require('express'),
     path = require('path'),
@@ -56,23 +57,19 @@ app.use(ejsLayouts)
 
 app.use(session({
     secret: "booooooom",
-	cookie: { maxAge: 60000000 },
-	resave: true,
-	savedUninitialized: false,
-	store: store
-    
+    cookie: { maxAge: 60000000 },
+    resave: true,
+    savedUninitialized: false,
+    store: store
 }))
 
 app.use(passport.initialize())
 app.use(passport.session())
-require('dotenv').load()
-
 
 app.use((req,res,next) => {
     app.locals.currentUser = req.user;
     app.locals.isLoggedIn = !!req.user
     next();
-
 })
 
 //root route
@@ -86,8 +83,6 @@ app.get('users/chat', (req,res)=>{
 })
 app.use('/projects', projectsRouter)
 app.use('/users', usersRouter)
-
-
 
 app.listen(port, (err) => {
 	console.log(err || "Server running on port " + port)

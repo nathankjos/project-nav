@@ -7,11 +7,12 @@
 
 user: <%= project.user.name %>
 
+<% if(project.user.id == currentUser.id){ %>
 <button type="button" class="btn btn-warning"> <a href='/projects/<%= project._id %>/edit'>Edit Project</a></button>
 <form method="POST" action="/projects/<%= project._id %>?_method=DELETE">
     <button class="btn btn-danger">Delete</button>
 </form>
-
+<% } %>
 
 <%= project %>
 
