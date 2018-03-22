@@ -4,6 +4,7 @@
     border-color: green;
 } */
 
+
 input.form-control{
     background-color: grey;
     border: black;
@@ -14,7 +15,7 @@ body{
     background: linear-gradient( rgba(28, 33, 32, 1), rgba(94,104,103,1)) fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 40%;
+   
     font-family: 'Raleway', sans-serif;
 }
 #plus {
@@ -76,9 +77,33 @@ li {
     background: rgba(255, 255, 255, 0.5);
     color: black;
 }
-.update{
+.footer {
+
+    height:24px; 
+    width: 100%; 
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
+
+}   
+
+.footer_contents {
+
+    height:24px; 
+    width: 1000px; 
+    margin:auto;
+    background-color: rgba(136, 147, 154, 1);
+
+}
+
+.update {
     color: #28a745;
 }
+
 a {
     color: white;
 }
