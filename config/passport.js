@@ -49,6 +49,7 @@ if(!req.body.name || !req.body.password)return done(null, false, req.flash ('sig
         var newUser = new User()
         newUser.name = req.body.name
         newUser.email = req.body.email
+        newUser.bio = req.body.bio
         newUser.password = newUser.generateHash(req.body.password)
         newUser.save((err, savedUser)=>{
             return done(null, newUser)

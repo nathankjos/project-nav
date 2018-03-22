@@ -7,7 +7,8 @@ const
     email: String,
     password: String,
     username: String,
-    picture: {type: String, default: "/images/CompassRose.svg"}
+    picture: {type: String, default: "/images/CompassRose.svg"},
+    bio: String,
   })
 
 userSchema.methods.generateHash = function(password) {
