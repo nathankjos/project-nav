@@ -6,10 +6,11 @@
 <div class="row">
     <div class="col-sm-6 col-sm-offset-3" style="margin: 50px auto">
         <div class="well">
+                
         </div>
     </div>
 </div>
-
+<!-- <a href="/users/profile/edit">Edit Profile</a> -->
 
 <% if(project[0] && project[0].user.toString() == currentUser._id.toString()){ %>
     <% project.forEach((p)=>{ %>
@@ -23,3 +24,6 @@
             </div>
     <% }) %>
     <% } %>
+
+
+

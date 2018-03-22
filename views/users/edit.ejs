@@ -1,9 +1,19 @@
-<h1>Edit User</h1>
+<h1>Edit Account:</h1>
+
+
 
 <form method="POST" action="/users/profile?_method=PATCH">
-    <input name="name" type="text" placeholder="Name" value="<%= currentUser.name %>" />
-    <input  name="picture" type="picture" placeholder="Picture" value="<%= currentUser.picture %>" />  
-    <input  name="password" type="password" placeholder="Password" />
-    
-    <button>Submit</button>
-</form>
+        <div class="form-group">
+            <label>Name</label>
+        <input class="form-control" value="<%= currentUser.name %>" name="name" type="text" placeholder="Name" />
+        </div>
+        <div class="form-group">
+                <label>Picture</label>
+         <input class="form-control" value="<%= currentUser.picture %>" name="picture" type="text" placeholder="Picture" />
+        </div>
+        <div class="form-group">
+                <label>Password</label>
+         <input class="form-control" name="password" type="text" placeholder="Password" />
+        </div>
+        <button type= 'submit' class='btn btn-secondary'>Edit Account</button>
+    </form>
