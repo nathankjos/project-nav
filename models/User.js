@@ -19,5 +19,14 @@ userSchema.methods.validPassword = function(password) {
 }
 userSchema.plugin(findOrCreate)
 
+// before re-saving a user, check if password was changed.
+// if so, encrypt the new password before saving.
+userSchema.pre('save', function(next) {
+  if(this.isModified('password')) {
+    this.password = this.generateHash(this.password)
+  }
+  next()
+})
+
 const User = mongoose.model('User', userSchema)
 module.exports = User

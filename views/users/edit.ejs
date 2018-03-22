@@ -1,0 +1,9 @@
+<h1>Edit User</h1>
+
+<form method="POST" action="/users/profile?_method=PATCH">
+    <input name="name" type="text" placeholder="Name" value="<%= currentUser.name %>" />
+    <input  name="picture" type="picture" placeholder="Picture" value="<%= currentUser.picture %>" />  
+    <input  name="password" type="password" placeholder="Password" />
+    
+    <button>Submit</button>
+</form>

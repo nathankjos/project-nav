@@ -1,7 +1,6 @@
 <div class="page-header">
-
+    
     <h1 id = "profileH1"><img class="profile-pic" src= <%= user.picture %>/>   <%= user.name %></h1>
-
 
 </div>
 <div class="row">
@@ -10,6 +9,8 @@
         </div>
     </div>
 </div>
+
+
 <% if(project[0] && project[0].user.toString() == currentUser._id.toString()){ %>
     <% project.forEach((p)=>{ %>
         <div class="card" style="width: 30%;">
