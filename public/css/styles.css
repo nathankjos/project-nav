@@ -67,5 +67,14 @@ li {
     width: 30px;
 }
 
+
+
+
+.comment {
+    display: block;
+    border: 1px solid rgba(113, 113, 255, 0.4);
+    font-size: 25px;
+}
+
 a {color: white;}
 a:hover {color:grey;}
