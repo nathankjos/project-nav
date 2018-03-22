@@ -3,8 +3,6 @@
     background-color: rgba(94,104,103,1);
     border-color: green;
 } */
-
-
 input.form-control{
     background-color: grey;
     border: black;
@@ -88,21 +86,16 @@ li {
     position: fixed;
     bottom: 0pt;
     left: 0pt;
-
 }   
-
 .footer_contents {
 
     height:24px; 
     padding-left: 39px;
     background-color: rgba(136, 147, 154, 1);
-
 }
-
 .update {
     color: #28a745;
 }
-
 a {
     color: white;
 }
