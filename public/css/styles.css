@@ -3,6 +3,7 @@
     background-color: rgba(94,104,103,1);
     border-color: green;
 } */
+
 input.form-control{
     background-color: grey;
     border: black;
@@ -69,12 +70,23 @@ li {
     display: block;
     border: 1px solid rgba(163, 163, 163, 0.4);
     font-size: 25px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+.update{
+    color: #28a745;
 }
 a {
     color: white;
 }
 a:hover {
     color:grey;
+}
+.btn{
+    margin: 5px;
 }
 ::selection{
     background-color:  rgba(113, 113, 255, 0.4);
