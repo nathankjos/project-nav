@@ -1,3 +1,5 @@
+
+
 /* .btn-primary {
     color:green;
     background-color: rgba(94,104,103,1);
@@ -5,11 +7,12 @@
    
 } */
 
+
 input.form-control{
     background-color: grey;
     border: black;
-
 }
+
 
 body{
     /* color: rgba(31, 31, 31, 0.548); */
@@ -23,7 +26,6 @@ body{
 li {
     list-style: none;
     display: inline;
-   
 }
 #profileH1 {
     margin: 25px auto 0;
@@ -44,7 +46,6 @@ li {
     min-width: 200px;
     overflow: scroll;
     color: black;
-    
 }
 
 .card-img-top{
@@ -71,10 +72,6 @@ li {
 #profPic {
     width: 30px;
 }
-
-
-
-
 .comment {
     display: block;
     border: 1px solid rgba(113, 113, 255, 0.4);

@@ -14,7 +14,8 @@
 <% projects.forEach((p)=>{ %>
 
     <div class="card" style="width: 30%;">
-            <img class="card-img-top" src= <%= p.imageUrl %> alt="Card image cap">
+            <img class="card-img-top" src="<%= p.imageUrl %>" alt="Card image cap">
+
             <div class="card-body">
                 <h5 class="card-title"><%= p.name %></h5>
                 <p class="card-text"><%=  p.description.substring(35,0) %><% if(p.description.length > 35){ %>...<% } %></p>
