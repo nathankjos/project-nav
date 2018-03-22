@@ -25,8 +25,6 @@ function escapeRegex(text){
         })
     },
     post: (req, res) => {
-        console.log("this is a post")
-        console.log(req.body)
         // Project.create(req.body, (err, project) => {
         //     console.log("this is hte new project", project)
         //     res.redirect('/projects')
@@ -37,7 +35,6 @@ function escapeRegex(text){
         newProject.currentProject = Boolean(req.body.currentProject)
         newProject.save((err, brandNewProject) => {
             if(err) return console.log(err)
-            console.log(brandNewProject)
             res.redirect('/projects')
         })
     },
