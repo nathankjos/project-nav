@@ -35,7 +35,7 @@ usersRouter.get('/profile', isLoggedIn ,(req, res)=>{
 })
 
 usersRouter.get('/profile/edit', isLoggedIn, (req,res)=>{
-  res.render('users/edit')
+  res.render('edit')
 })
 
 usersRouter.patch('/profile', isLoggedIn, (req, res) => {
