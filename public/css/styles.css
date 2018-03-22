@@ -2,16 +2,11 @@
     color:green;
     background-color: rgba(94,104,103,1);
     border-color: green;
-   
 } */
-
 input.form-control{
     background-color: grey;
     border: black;
-
 }
-
-
 body{
     /* color: rgba(31, 31, 31, 0.548); */
     color: rgba(240,244,241, .9);
@@ -21,7 +16,6 @@ body{
     margin-bottom: 40%;
     font-family: 'Raleway', sans-serif;
 }
-
 #plus {
     color: rgba(255, 255, 255, 0.7);
     text-shadow: 1px 1px 1px rgba(160, 160, 160, 1);
@@ -30,11 +24,9 @@ body{
 #plusEle {
      margin: auto;
 }
-
 li {
     list-style: none;
     display: inline;
-   
 }
 #profileH1 {
     margin: 25px auto 0;
@@ -56,10 +48,7 @@ li {
     overflow: scroll;
     color: black;
     background: rgba(255, 255, 255, 0.8);
-
-
 }
-
 .card-img-top{
     height: 140px;
 }
@@ -76,16 +65,17 @@ li {
 #profPic {
     width: 30px;
 }
-
-
-
-
 .comment {
     display: block;
     border: 1px solid rgba(163, 163, 163, 0.4);
     font-size: 25px;
 }
-
-a {color: white;}
-a:hover {color:grey;}
-
+a {
+    color: white;
+}
+a:hover {
+    color:grey;
+}
+::selection{
+    background-color:  rgba(113, 113, 255, 0.4);
+}

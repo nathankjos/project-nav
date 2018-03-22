@@ -1,3 +1,5 @@
+
+
 const
   express = require('express'),
   usersRouter = new express.Router(),
@@ -31,6 +33,19 @@ usersRouter.get('/profile', isLoggedIn ,(req, res)=>{
     res.render('profile', { user: req.user, project: projects }) //current user
   })
 })
+
+usersRouter.get('/profile/edit', isLoggedIn, (req,res)=>{
+  res.render('users/edit')
+})
+
+usersRouter.patch('/profile', isLoggedIn, (req, res) => {
+  if(!req.body.password) delete req.body.password
+  Object.assign(req.user, req.body)
+  req.user.save((err, updatedUser) => {
+    res.redirect('/users/profile')
+  })
+})
+
 
 usersRouter.get('/logout', (req, res)=>{
   req.logout()
