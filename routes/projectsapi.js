@@ -3,8 +3,7 @@ const
     projectsapiRouter = new express.Router()
     projectsapiCtrl = require('../controllers/projectsapi.js')
 
-projectsRouter.get('/', projectsCtrl.index)
+projectsapiRouter.get('/api/projects', projectsapiCtrl.index)
+projectsapiRouter.get('/api/projects/:id', projectsapiCtrl.show)
 
-projectsRouter.get('/:id', projectsCtrl.show)
-
-module.exports = projectsRouter
+module.exports = projectsapiRouter

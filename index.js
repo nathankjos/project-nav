@@ -23,6 +23,7 @@ const
     flash = require('connect-flash'),
     passportConfig = require('./config/passport.js'),
     projectsRouter = require('./routes/projects.js'),
+    projectsapiRouter = require('./routes/projectsapi.js'),
     usersRouter = require('./routes/users.js'),
     Project = require('./models/Project.js')
 
@@ -81,6 +82,7 @@ app.get('/', (req,res) => {
     })  //view who current user is
 })
 
+app.use('/', projectsapiRouter)
 app.use('/projects', projectsRouter)
 app.use('/users', usersRouter)
 
