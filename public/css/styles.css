@@ -1,5 +1,3 @@
-
-
 /* .btn-primary {
     color:green;
     background-color: rgba(94,104,103,1);
@@ -7,39 +5,29 @@
    
 } */
 
-
 input.form-control{
     background-color: grey;
     border: black;
+
 }
 
 
 body{
     /* color: rgba(31, 31, 31, 0.548); */
     color: rgba(240,244,241, .9);
-    background: linear-gradient( rgba(94,104,103,1), rgba(28, 33, 32, 1)) fixed;
+    background: linear-gradient( rgba(28, 33, 32, 1), rgba(94,104,103,1)) fixed;
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 40%;
     font-family: 'Raleway', sans-serif;
 }
-#plus {
-    color: rgb(198, 244, 255);
-    text-shadow: 1px 1px 1px #ccc;
-    font-size: 2.5em;
-}
-#plusEle {
-     margin: auto;
-}
 li {
     list-style: none;
     display: inline;
+   
 }
 #profileH1 {
     margin: 25px auto 0;
-}
-div.deleteCtn {
-    width: 0;
 }
 .nav-li {
     margin-left: 250px;
@@ -57,6 +45,7 @@ div.deleteCtn {
     min-width: 200px;
     overflow: scroll;
     color: black;
+    
 }
 
 .card-img-top{
@@ -83,6 +72,10 @@ div.deleteCtn {
 #profPic {
     width: 30px;
 }
+
+
+
+
 .comment {
     display: block;
     border: 1px solid rgba(113, 113, 255, 0.4);
