@@ -3,21 +3,13 @@ const Project = require('../models/Project.js')
 module.exports = 
 {
     index: (req, res) => {
-        if(req.query.search){
-       const regex = new RegExp(escapeRegex(req.query.search), 'gi');
-
     Project.find({name: regex}, (err, allDemProjects) => {
-        res.render('projects/index',{projects: allDemProjects, currentUser: req.user})
+        res.json('projects/index',{projects: allDemProjects, currentUser: req.user})
     })
-        } else {
         Project.find({}, (err, allDemProjects) => {
             console.log("hello")
             res.render('projects/index',{projects: allDemProjects})
         })
-    }
-function escapeRegex(text){
-        return text.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&" );
-    }
     },
     show: (req, res) => {
         Project.findById(req.params.id).populate('user').exec((err, thatProject) => {
@@ -25,12 +17,7 @@ function escapeRegex(text){
         })
     },
     post: (req, res) => {
-        // Project.create(req.body, (err, project) => {
-        //     console.log("this is hte new project", project)
-        //     res.redirect('/projects')
-        // })
         var newProject = new Project(req.body)
-
         newProject.user = req.user.id
         newProject.currentProject = Boolean(req.body.currentProject)
         newProject.save((err, brandNewProject) => {
