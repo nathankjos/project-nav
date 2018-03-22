@@ -1,12 +1,7 @@
-
-
 input.form-control{
     background-color: grey;
     border: black;
-
 }
-
-
 body{
     /* color: rgba(31, 31, 31, 0.548); */
     color: rgba(240,244,241, .9);
@@ -19,7 +14,6 @@ body{
 li {
     list-style: none;
     display: inline;
-   
 }
 #profileH1 {
     margin: 25px auto 0;
@@ -40,7 +34,6 @@ li {
     min-width: 200px;
     overflow: scroll;
     color: black;
-    
 }
 .card-img-top{
     height: 140px;
@@ -66,10 +59,6 @@ li {
 #profPic {
     width: 30px;
 }
-
-
-
-
 .comment {
     display: block;
     border: 1px solid rgba(113, 113, 255, 0.4);
