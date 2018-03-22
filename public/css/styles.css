@@ -94,8 +94,7 @@ li {
 .footer_contents {
 
     height:24px; 
-    width: 1000px; 
-    margin:auto;
+    padding-left: 39px;
     background-color: rgba(136, 147, 154, 1);
 
 }
