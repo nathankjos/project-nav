@@ -16,8 +16,8 @@
     <input name ="body" type="text" class="form-control" />
     <button class="btn btn-warning">Submit Comment</button> 
 </form>
-<ul>
+<ul class="comment-ul">
     <% project.comments.forEach((c) => { %>
-        <h1><%= c.user %> - <%= c.body %></h1>
+        <li class="comment">"<%= c.body %>" by <%= c.user %></li>
     <% }) %>
 </ul>
