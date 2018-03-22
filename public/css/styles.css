@@ -23,12 +23,23 @@ body{
     margin-bottom: 40%;
     font-family: 'Raleway', sans-serif;
 }
+#plus {
+    color: rgb(198, 244, 255);
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 2.5em;
+}
+#plusEle {
+     margin: auto;
+}
 li {
     list-style: none;
     display: inline;
 }
 #profileH1 {
     margin: 25px auto 0;
+}
+div.deleteCtn {
+    width: 0;
 }
 .nav-li {
     margin-left: 250px;
