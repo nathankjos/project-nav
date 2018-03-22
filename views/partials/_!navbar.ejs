@@ -1,16 +1,18 @@
+<nav class="navbar navbar-expand-sm" style="background-color: rgba(136, 147, 154, 0.5);">
 
-<nav class="navbar navbar-expand-sm" style="background-color: #88939a83;">
+    <a class="navbar-brand" href="/"><span class="fa fa-compass"></span>  Project Navigator</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto"></ul>
+      <form action="/projects" method="GET" class="form-inline">
+        <input type="text" name="search" placeholder="Search Projects" class="form-control" style="background:rgba(255, 255, 255, 0.6);">
+        <button type="submit" class="btn btn-outline-success"><span class="fa fa-search"></span></button>
 
-  <a class="navbar-brand" href="/"><span class="fa fa-compass"></span>Project Navigator</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+      </form>
+    </div>
+  </nav>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto"></ul>
-    <form action="/projects" method="GET" class="form-inline">
-      <input type="text" name="search" placeholder="search projects" class="form-control">
-      <input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="Search">
-    </form>
-  </div>
-</nav>
+  
