@@ -22,8 +22,8 @@
     <% project.comments.forEach((c) => { %>
         <li class="comment">"<%= c.body %>" by <%= c.user %>
         <% if(c.user === currentUser.username || c.user === currentUser.name || c.user === currentUser.username) { %>
-            <form class="hide comment-form" method="POST" action="/projects/<%= project._id %>/comments/<%= c._id%>?_method=DELETE">
-                <button onclick="return confirm('Are you sure you want to delete this comment?')" class="btn btn-danger" >Delete</button>
+            <form class="hide comment-form animated hinge" method="POST" action="/projects/<%= project._id %>/comments/<%= c._id%>?_method=DELETE">
+                <button onclick="return confirm('Are you sure you want to delete this comment?')" class="btn btn-danger commentDeleteBtn" >Delete</button>
             </form></li>
         <% } %>
     <% }) %>

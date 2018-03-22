@@ -116,9 +116,15 @@ a:hover {
 ::selection{
     background-color:  rgba(113, 113, 255, 0.4);
 }
+.deleteBtn {
+    display: inline-block;
+}
+.comment-form {
+    float: right;
+}
 .hide {
     display: none;
 }
-.deletable {
-    display: block;
+.commentDeleteBtn {
+    margin: -3px 0 0 0;
 }
