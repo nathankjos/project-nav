@@ -1,7 +1,7 @@
 <div class="page-header">
 
     <h1 id = "profileH1"><img class="profile-pic" src="<%= user.picture %>" />   <%= user.name %></h1>
-
+    <a href="/users/profile/edit" class="btn btn-outline-secondary">Edit Account</a>
 
 </div>
 <div class="row">
@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <h5 class="card-title"><%= p.name %></h5>
                     <p class="card-text"><%=  p.description.substring(35,0) %><% if(p.description.length > 35){ %>...<% } %></p>
-                    <a href="/projects/<%= p._id%>" class="btn btn-primary card-button">View Project</a>
+                    <a href="/projects/<%= p._id%>" class="btn btn-outline-secondary card-button">View Project</a>
                 </div>
             </div>
     <% } %>
