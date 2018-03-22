@@ -15,6 +15,8 @@ projectsRouter.patch('/:id', isLoggedIn, projectsCtrl.update)
 projectsRouter.delete('/:id', isLoggedIn, projectsCtrl.destroy)
 projectsRouter.post('/:id/comments', isLoggedIn, projectsCtrl.createComment)
 
+projectsRouter.delete('/:projectId/comments/:id', isLoggedIn, projectsCtrl.destroyComment)
+
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()) return next();
     res.redirect('/users/login');

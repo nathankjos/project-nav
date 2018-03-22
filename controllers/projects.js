@@ -1,4 +1,5 @@
 const Project = require('../models/Project.js')
+const Comment = require('../models/Project.js')
 
 module.exports = 
 {
@@ -66,6 +67,11 @@ function escapeRegex(text){
             thatProject.save((err, savedProject) => {
                 res.redirect(`/projects/${thatProject._id}`)
             })
+        })
+    },
+    destroyComment: (req,res) => {
+        Project.findOne({'comment._id': req.params.id}, (err, thatComment)=> {
+            res.redirect(`/projects/${Project._id}`)
         })
     }
 }
