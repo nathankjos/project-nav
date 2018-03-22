@@ -70,8 +70,16 @@ function escapeRegex(text){
         })
     },
     destroyComment: (req,res) => {
-        Project.findOne({'comment._id': req.params.id}, (err, thatComment)=> {
-            res.redirect(`/projects/${Project._id}`)
-        })
+            Project.findById(req.params.projectId, (err, thatProject)=> {
+                if(err) return console.log(err)
+                console.log(thatProject)
+                thatProject.comments.remove(req.params.id)
+                console.log(thatProject)
+                // var t  = thatProject.comments.find((c) => c._id.equals(req.params.id))
+                // console.log(t)
+                thatProject.save((err)=> {
+                    res.redirect(`/projects/${thatProject._id}`)
+                })
+            })
     }
 }
