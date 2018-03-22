@@ -3,14 +3,14 @@
 <form method="POST" action="/projects/<%= project._id %>?_method=PATCH">
     <div class="form-group">
         <label>Project Name</label>
-    <input class="form-control" value="<%= project.name %>" name="name" type="text" placeholder="Name of Project" />
+    <input class="form-control" value="<%= project.name %>" name="name" type="text" placeholder="Name of Your Project" />
     </div>
     <div class="form-group">
         <label>Link to Github Repo</label>
         <input class="form-control" value="<%= project.githubUrl %>" name="githubUrl" type="text" placeholder="Link to GitHub Project" />
     </div>
     <div class="form-group">
-            <label>Description of Project</label>
+            <label>Description of Your Project</label>
     <input class="form-control" value="<%= project.description %>" name="description" type="text" placeholder="Description" />
     </div>
     <div class="form-group">
@@ -18,8 +18,8 @@
         <input class="form-control" value="<%= project.imageUrl %>" name="imageUrl" type="text" placeholder="Image URL" />
     </div>
     <div class="form-group">
-        <label>Description of Project</label>
-        <input class="form-control" value="<%= project.projectUrl %>" name="projectUrl" type="text" placeholder="Link to GitHub Project" />
+        <label>Project URL</label>
+        <input class="form-control" value="<%= project.projectUrl %>" name="projectUrl" type="text" placeholder="Project URK" />
     </div>
         <div class="form-group">
         <label for="exampleFormControlSelect1"> Current Project? </label>
