@@ -1,7 +1,7 @@
 body{
     /* color: rgba(31, 31, 31, 0.548); */
     color: rgba(240,244,241, .9);
-    background: linear-gradient( rgba(94,104,103,1), rgba(28, 33, 32, 1));
+    background: linear-gradient( rgba(94,104,103,1), rgba(28, 33, 32, 1)) fixed;
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 40%;
