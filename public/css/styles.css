@@ -24,8 +24,8 @@ body{
     font-family: 'Raleway', sans-serif;
 }
 #plus {
-    color: rgb(198, 244, 255);
-    text-shadow: 1px 1px 1px #ccc;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 1px 1px 1px rgba(160, 160, 160, 1);
     font-size: 2.5em;
 }
 #plusEle {
@@ -57,6 +57,7 @@ div.deleteCtn {
     min-width: 200px;
     overflow: scroll;
     color: black;
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .card-img-top{
@@ -71,14 +72,6 @@ div.deleteCtn {
 }
 .card-button{
     height: 40px;
-}
-#newProject {
-    float: right;
-    font-size: 20px;
-    border: 1px solid rgba(113, 113, 255, 0.4);
-    background:rgba(113, 113, 255, 0.2);
-    border-radius: 5px;
-    padding: 4px;
 }
 #profPic {
     width: 30px;
