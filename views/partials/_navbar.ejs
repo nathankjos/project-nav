@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-sm" style="background-color: rgba(136, 147, 154, 0.5);">
 
-    <a class="navbar-brand" href="/"><span class="fa fa-compass"></span>Project Navigator</a>
+    <a class="navbar-brand" href="/"><span class="fa fa-compass"></span>  Project Navigator</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,7 +10,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto"></ul>
       <form action="/projects" method="GET" class="form-inline">
-        <input type="text" name="search" placeholder="search projects" class="form-control">
+        <span class="fa fa-search" style="margin-right: 10px;"></span>   
+        <input type="text" name="search" placeholder="Search Projects" class="form-control" style="background:rgba(255, 255, 255, 0.6);">
         <input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="Search">
       </form>
       <ul class="navbar-nav">
@@ -24,7 +25,7 @@
             <a class="dropdown-item" href="/projects"><span class="fa fa-connectdevelop"></span>   Your Projects</a>
             <a class="dropdown-item" href="/projects/new"><span class="fa fa-plus-square"></span>   New Project</a>
 
-            <a class="dropdown-item" href="/users/profile/edit">Edit Profile</a>
+            <a class="dropdown-item" href="/users/profile/edit"><span class="fa fa-edit"></span>   Edit Profile</a>
             
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/users/logout"><span class="fa fa-sign-out"></span>   Log Out</a>

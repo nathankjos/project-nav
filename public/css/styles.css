@@ -116,3 +116,9 @@ a:hover {
 ::selection{
     background-color:  rgba(113, 113, 255, 0.4);
 }
+.hide {
+    display: none;
+}
+.deletable {
+    display: block;
+}
